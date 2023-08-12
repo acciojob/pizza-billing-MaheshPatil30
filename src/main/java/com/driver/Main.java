@@ -2,17 +2,19 @@ package com.driver;
 
 public class Main {
   public static void main(String[] args) {
-    DeluxePizza dp = new DeluxePizza(true);
-    System.out.println(dp.getPrice());
-    dp.addTakeaway();
-    dp.addExtraCheese();
-    dp.addTakeaway();
-    System.out.println(dp.getBill());
+    Pizza vegPizza = new Pizza(300);
+    vegPizza.addExtraCheese();
+    vegPizza.addExtraToppings();
+    vegPizza.addPaperBag();
+    System.out.println("Example 1:");
+    System.out.println(vegPizza.generateBill());
 
-    Pizza p = new Pizza(true);
-    p.addExtraCheese();
-    p.addExtraToppings();
-    p.addTakeaway();
-    System.out.println(p.getBill());
+    System.out.println();
+
+    DeluxePizza nonVegDeluxePizza = new DeluxePizza(400);
+    nonVegDeluxePizza.addExtraCheese();
+    nonVegDeluxePizza.addPaperBag();
+    System.out.println("Example 2:");
+    System.out.println(nonVegDeluxePizza.generateBill());
   }
 }
